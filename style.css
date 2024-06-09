@@ -1,0 +1,364 @@
+/* | IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	line-height: 1.5;
+}
+
+/* | UTILITY CLASSES */
+img {
+	display: block;
+}
+
+li {
+	list-style-type: none;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+/* | VARIABLES */
+:root {
+	/* | COLORS  */
+	--strong-cyan: hsl(172, 67%, 45%);
+	--very-dark-cyan: hsl(183, 100%, 15%);
+	--dark-grayish-cyan: hsl(186, 14%, 43%);
+	--grayish-cyan: hsl(184, 14%, 56%);
+	--light-grayish-cyan: hsl(185, 41%, 84%);
+	--very-light-grayish-cyan: hsl(189, 41%, 97%);
+	--red: hsl(0, 67%, 65%);
+	--white: hsl(0, 0%, 100%);
+
+	/* | FONTS  */
+	--p-fonts: 700 16px 'Space Mono';
+	--btn-fonts: 700 20px 'Space Mono';
+	--h2-fonts: 700 26px 'Space Mono';
+	--h1-fonts: 700 48px 'Space Mono';
+
+	/* | STYLE  */
+	--small-border-radius: 5px;
+	--border-radius: 16px;
+	--big-border-radius: 24px;
+}
+
+/* | GENERAL STYLES */
+html {
+	max-width: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding-block: 160px 240px;
+	font: var(--p-fonts);
+	background-color: var(--light-grayish-cyan);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	gap: 85px;
+}
+
+img[alt='Splitter Logo'] {
+	width: 87px;
+	height: auto;
+}
+
+.container {
+	width: 920px;
+	aspect-ratio: 23/12;
+	padding: 32px;
+	border-radius: var(--big-border-radius);
+	background-color: var(--white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 48px;
+	overflow: hidden;
+}
+
+.container > * {
+	width: 50%;
+}
+
+.calc {
+	margin-right: -16px;
+	padding: 16px;
+	color: var(--dark-grayish-cyan);
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.calc > li {
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	gap: 6px;
+	position: relative;
+}
+
+.calc .input {
+	width: 100%;
+	height: 48px;
+	padding-inline: 16px;
+	border-radius: var(--small-border-radius);
+	font: var(--h2-fonts);
+	background-color: var(--very-light-grayish-cyan);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+:is(.input, .input-grid input):focus-within {
+	border: 2px solid var(--strong-cyan);
+}
+
+.input img {
+	width: auto;
+	height: 18px;
+}
+
+input {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--small-border-radius);
+	border: none;
+	outline: none;
+	font: inherit;
+	background-color: inherit;
+	color: var(--very-dark-cyan);
+	text-align: right;
+}
+
+.input input::placeholder {
+	color: var(--grayish-cyan);
+}
+
+.input-grid {
+	font: var(--h2-fonts);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 48px;
+	gap: 16px;
+}
+
+.input-grid li {
+	border-radius: var(--small-border-radius);
+	background-color: var(--very-dark-cyan);
+	color: var(--white);
+}
+
+.input-grid li.clicked {
+	background-color: var(--strong-cyan);
+	color: var(--very-dark-cyan);
+}
+
+.input-grid input {
+	padding-inline: 12px;
+}
+
+.input-grid input::placeholder {
+	color: var(--dark-grayish-cyan);
+	text-align: center;
+}
+
+.calc > li > p:last-child {
+	font-style: italic;
+	color: var(--red);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.display {
+	height: 100%;
+	padding: 40px;
+	border-radius: var(--border-radius);
+	background-color: var(--very-dark-cyan);
+	color: var(--white);
+	display: flex;
+	flex-flow: column;
+	gap: 48px;
+}
+
+.display li {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.display div p:last-child {
+	color: var(--grayish-cyan);
+}
+
+h1 {
+	font: var(--h1-fonts);
+	color: var(--strong-cyan);
+}
+
+.display .btn {
+	width: 100%;
+	height: 48px;
+	margin-top: auto;
+	border-radius: var(--small-border-radius);
+	font: var(--btn-fonts);
+	text-transform: uppercase;
+	background-color: var(--strong-cyan);
+	color: var(--very-dark-cyan);
+	opacity: 0.2;
+}
+
+.display .btn:hover {
+	background-color: var(--light-grayish-cyan);
+}
+
+@media screen and (max-width: 930px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-fonts: 700 14px 'Space Mono';
+		--h2-fonts: 700 20px 'Space Mono';
+
+		/* | STYLE  */
+		--border-radius: 0;
+	}
+
+	/* | GENERAL STYLES */
+	body {
+		padding-block: 100px;
+		gap: 60px;
+	}
+
+	.container {
+		width: 730px;
+		aspect-ratio: 23/12;
+		padding: 0;
+		gap: 32px;
+	}
+
+	.calc {
+		margin-right: -32px;
+		padding: 32px;
+	}
+
+	.calc .input {
+		height: 32px;
+	}
+
+	.input-grid {
+		grid-auto-rows: 32px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-fonts: 700 32px 'Space Mono';
+		--btn-fonts: 700 1.3em 'Space Mono';
+		--h2-fonts: 700 1.6em 'Space Mono';
+		--h1-fonts: 700 2em 'Space Mono';
+
+		/* | STYLE  */
+		--small-border-radius: 0.3em;
+		--border-radius: 1em;
+		--big-border-radius: 1.5em 1.5em 0 0;
+	}
+
+	/* | GENERAL STYLES */
+	body {
+		padding-block: 3.1em 0;
+		gap: 2.5em;
+	}
+
+	img[alt='Splitter Logo'] {
+		width: 5.4em;
+	}
+
+	.container {
+		width: 100%;
+		height: auto;
+		aspect-ratio: auto;
+		padding: 1.9em 1.5em 2em;
+		flex-flow: column;
+		gap: 2.1em;
+	}
+
+	.container > * {
+		width: 100%;
+	}
+
+	.calc {
+		margin-right: 0;
+		padding: 0.5em;
+		justify-content: center;
+		gap: 2.5em;
+	}
+
+	.calc .input {
+		height: 1.8em;
+		padding-inline: 0.7em;
+	}
+
+	:is(.input, .input-grid input):focus-within {
+		border: 0.125em solid var(--strong-cyan);
+	}
+
+	.input img {
+		height: 0.7em;
+	}
+
+	.input-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: 1.8em;
+		gap: 0.7em;
+	}
+
+	.display {
+		height: auto;
+		padding: 2.8em 1.5em 1.5em;
+		gap: 2.6em;
+	}
+
+	.display .btn {
+		height: 2.4em;
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-fonts: 700 24px 'Space Mono';
+	}
+}
+
+@media screen and (max-width: 430px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-fonts: 700 18px 'Space Mono';
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-fonts: 700 16px 'Space Mono';
+	}
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Tip calculator app</title>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+		<link
+			rel="shortcut icon"
+			href="img/favicon-32x32.png"
+			type="image/x-icon" />
+	</head>
+	<body>
+		<img
+			src="img/logo.svg"
+			alt="Splitter Logo" />
+		<div class="container">
+			<ul class="calc">
+				<li>
+					<p>Bill</p>
+					<div class="input">
+						<img
+							src="img/icon-dollar.svg"
+							alt="Dollar Icon" />
+						<input
+							type="text"
+							name="price"
+							id="price"
+							placeholder="0" />
+					</div>
+				</li>
+				<li>
+					<p>Select Tip %</p>
+					<ul class="input-grid">
+						<li
+							class="btn"
+							value="5">
+							5%
+						</li>
+						<li
+							class="btn"
+							value="10">
+							10%
+						</li>
+						<li
+							class="btn"
+							value="15">
+							15%
+						</li>
+						<li
+							class="btn"
+							value="25">
+							25%
+						</li>
+						<li
+							class="btn"
+							value="50">
+							50%
+						</li>
+						<input
+							type="text"
+							name="percent"
+							id="percent"
+							placeholder="Custom" />
+					</ul>
+				</li>
+				<li>
+					<p>Number of People</p>
+					<div class="input">
+						<img
+							src="img/icon-person.svg"
+							alt="Persons Icon" />
+						<input
+							type="text"
+							name="people"
+							id="people"
+							placeholder="0" />
+					</div>
+					<p></p>
+				</li>
+			</ul>
+			<ul class="display">
+				<li>
+					<div>
+						<p>Tip Amount</p>
+						<p>/ person</p>
+					</div>
+					<h1 class="tip-total">$0.00</h1>
+				</li>
+				<li>
+					<div>
+						<p>Total</p>
+						<p>/ person</p>
+					</div>
+					<h1 class="sum-total">$0.00</h1>
+				</li>
+				<p class="btn">Reset</p>
+			</ul>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
